@@ -297,8 +297,9 @@ public class IntroMenuController : MonoBehaviour
                 if (carPrefab != null)
                 {
                     carSpawner.SpawnCar(carPrefab);
-                    FindFirstObjectByType<UberJob>()?.Initialize();
                 }
+                
+                FindFirstObjectByType<UberJob>()?.Initialize();
             }
 
             GameManager gameManager = FindFirstObjectByType<GameManager>();
@@ -358,3 +359,4 @@ public class IntroMenuController : MonoBehaviour
 
 
 }
+
