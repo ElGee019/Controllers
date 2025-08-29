@@ -71,6 +71,7 @@ public class IntroMenuController : MonoBehaviour
                 {
                     GameObject carInstance = carSpawner.SpawnCar(carPrefab);
                     gameManager.SetCurrentCar(carInstance);
+                    FindFirstObjectByType<UberJob>()?.Initialize();
 
                     RPMMeter rpmMeter = FindFirstObjectByType<RPMMeter>();
                     if (rpmMeter != null)
@@ -296,6 +297,7 @@ public class IntroMenuController : MonoBehaviour
                 if (carPrefab != null)
                 {
                     carSpawner.SpawnCar(carPrefab);
+                    FindFirstObjectByType<UberJob>()?.Initialize();
                 }
             }
 
@@ -353,5 +355,6 @@ public class IntroMenuController : MonoBehaviour
         // Destroy this component to prevent any further execution
         Destroy(this);
     }
+
 
 }
