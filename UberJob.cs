@@ -89,12 +89,8 @@ public class UberJob : MonoBehaviour
     }
 
     private void Awake()
-    {
-        InitializeComponents();
-        SetupEventListeners();
-    }
 
-    public void InitializeComponents()
+    private void InitializeComponents()
     {
         carController = FindFirstObjectByType<DriveCar>();
         collisionDetector = FindFirstObjectByType<CollisionDetector>();
@@ -970,4 +966,5 @@ public class UberJob : MonoBehaviour
         CancelInvoke(nameof(HideCompletionUI));
         CancelInvoke(nameof(ShowMainMenu));
     }
+
 }
