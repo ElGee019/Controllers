@@ -90,6 +90,18 @@ public class UberJob : MonoBehaviour
 
     private void Awake()
     {
+        StartCoroutine(DelayedInitialize());
+    }
+
+    private IEnumerator DelayedInitialize()
+    {
+        // Wait until the car and its PlayerInput component have been spawned.
+        while (FindFirstObjectByType<PlayerInput>() == null)
+        {
+            yield return null;
+        }
+
+        // Now that the car exists, we can initialize the rest of the components.
         InitializeComponents();
         SetupEventListeners();
     }
